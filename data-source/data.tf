@@ -18,6 +18,10 @@ data "aws_ami" "joindevops" {
     }
 }
 
+data "aws_security_group" "selected" {
+    id = var.security_group_id
+}
+
 output ami_id {
-    value = data.aws_ami.id
+    value = data.aws_ami.joindevops.id
 }
